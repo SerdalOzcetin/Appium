@@ -18,7 +18,8 @@
         <selenium.version>3.141.59</selenium.version>
         <appium.version>7.6.0</appium.version>
         <log4j.version>2.20.0</log4j.version>
-        <junit.version>4.13.2</junit.version>
+        <!-- <junit.version>4.13.2</junit.version>-->
+        <testng.version>7.8.0</testng.version>
         <webdrivermanager.version>5.3.2</webdrivermanager.version>
         <maven.surefire.version>3.0.0-M8</maven.surefire.version>
 
@@ -81,13 +82,24 @@
             <artifactId>selenium-api</artifactId>
             <version>${selenium.version}</version>
         </dependency>
-        <!-- JUnit -->
+        <!-- JUnit
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+        -->
+
+        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
+        </dependency>
+
         <!-- Appium -->
         <dependency>
             <groupId>io.appium</groupId>
@@ -116,6 +128,12 @@
             <groupId>com.github.vladislavsevruk</groupId>
             <artifactId>recursive-assertion-assertj</artifactId>
             <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
         </dependency>
 
 
@@ -154,7 +172,7 @@
                             <outputDirectory>${project.build.directory}</outputDirectory>
                             <inputDirectory>${project.build.directory}</inputDirectory>
                             <jsonFiles>
-                                <param>**/cucumber*.json</param>
+                                <param>*/cucumber.json</param>
                             </jsonFiles>
                         </configuration>
                     </execution>
